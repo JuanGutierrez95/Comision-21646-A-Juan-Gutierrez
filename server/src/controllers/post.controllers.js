@@ -21,8 +21,8 @@ export const createPost = async (req, res) => {
       content: content,
       imgUrl: imgUrl,
     });
-  
-  return res.status(201).json(newPost);
+
+    return res.status(201).json(newPost);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
