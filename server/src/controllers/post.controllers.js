@@ -42,8 +42,19 @@ export const updatePost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-export const deletePost = (req, res) => {
+export const deletePost = async (req, res) => {
   try {
+    const { id } = req.params;
+    const deletedPost = await PostModel.destroy({
+      where: {
+        id: id,
+      },
+    });
+    if (!deletedPost) {
+      return res.status(404).json({ message: "Post no encontrado" });
+    } else {
+      return res.status(200).json({ message: "Post eliminado" });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
