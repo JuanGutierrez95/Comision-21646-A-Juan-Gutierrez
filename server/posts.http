@@ -1,15 +1,15 @@
-@url = http://localhost:3000
+@urlApi = http://localhost:3000
 
 ### Get all posts
-GET {{url}}/api/posts
+GET {{urlApi}}/api/posts
 
 ### Create post
-POST  {{url}}/api/posts
+POST  {{urlApi}}/api/posts
 Content-Type: application/json
 
 ### Update post
-PUT {{url}}/api/posts/:id
+PUT {{urlApi}}/api/posts/:id
 Content-Type: application/json
 
 ### Delete post
-PUT {{url}}/api/posts/:id
+DELETE  {{urlApi}}/api/posts/:id
