@@ -1,4 +1,4 @@
-@urlApi = http://localhost:3000
+//@urlApi = http://localhost:3000
 
 ### Get all posts
 GET http://localhost:3000/api/posts
@@ -8,16 +8,22 @@ POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Titulo del Post5",
+    "title": "Titulo del Post88",
     "content": "Contenido del Post",
     "imgUrl": "https://google.com"
 }
 
 
 ### Update post
-PUT http://localhost:3000/api/posts/:id
+PUT http://localhost:3000/api/posts/1
 Content-Type: application/json
+
+{
+    "title": "Titulo actualizado",
+    "content": "Contenido del Post actualizado",
+    "imgUrl": "https://google.com"
+}
 
 
 ### Delete post
-DELETE  http://localhost:3000/api/posts/:id
+DELETE http://localhost:3000/api/posts/6
