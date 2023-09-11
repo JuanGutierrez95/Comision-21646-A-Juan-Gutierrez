@@ -1,6 +1,6 @@
 import { PostModel } from "../models/Posts.js";
 
-export const getPosts = async (req, res) => {
+export const ctrlGetPosts = async (req, res) => {
   try {
     const posts = await PostModel.findAll();
     if (!posts) {
@@ -13,7 +13,7 @@ export const getPosts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-export const createPost = async (req, res) => {
+export const ctrlCreatePost = async (req, res) => {
   try {
     const { title, content, imgUrl } = req.body;
     const newPost = await PostModel.create({
@@ -27,7 +27,7 @@ export const createPost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-export const updatePost = async (req, res) => {
+export const ctrlUpdatePost = async (req, res) => {
   try {
     const { id } = req.params;
     const updatedPost = await PostModel.findByPk(id);
@@ -42,7 +42,7 @@ export const updatePost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-export const deletePost = async (req, res) => {
+export const ctrlDeletePost = async (req, res) => {
   try {
     const { id } = req.params;
     const deletedPost = await PostModel.destroy({

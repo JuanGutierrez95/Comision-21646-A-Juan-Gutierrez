@@ -1,11 +1,18 @@
 import { Router } from "express";
-import { createPost, deletePost, getPosts, updatePost } from "../controllers/post.controllers.js";
+import {
+  ctrlCreatePost,
+  ctrlDeletePost,
+  ctrlGetPosts,
+  ctrlUpdatePost,
+} from "../controllers/post.controllers.js";
+import { createPost, updatePost } from "../models/schemas/post.schema.js";
+import { validator } from "../middlewares/validator.js";
 
 const postRouter = Router();
 
-postRouter.get("/api/posts", getPosts);
-postRouter.post("/api/posts", createPost);
-postRouter.put("/api/posts/:id", updatePost);
-postRouter.delete("/api/posts/:id", deletePost);
+postRouter.get("/api/posts", ctrlGetPosts);
+postRouter.post("/api/posts", createPost, validator, ctrlCreatePost);
+postRouter.put("/api/posts/:id", updatePost, ctrlUpdatePost);
+postRouter.delete("/api/posts/:id", ctrlDeletePost);
 
 export { postRouter };
