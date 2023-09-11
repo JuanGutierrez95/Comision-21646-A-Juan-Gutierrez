@@ -1,0 +1,15 @@
+@url = http://localhost:3000
+
+### Get all posts
+GET {{url}}/api/posts
+
+### Create post
+POST  {{url}}/api/posts
+Content-Type: application/json
+
+### Update post
+PUT {{url}}/api/posts/:id
+Content-Type: application/json
+
+### Delete post
+PUT {{url}}/api/posts/:id
