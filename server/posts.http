@@ -8,8 +8,8 @@ POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Titulo del Post88",
-    "content": "Contenido del Post",
+    "title": "Bien hecho",
+    "content": "Contenido del Post para ver si funcionan las validaciones y middlewares",
     "imgUrl": "https://google.com"
 }
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "title": "Titulo actualizado",
-    "content": "Contenido del Post actualizado",
+    "content": "Actualizamos si middlewares y validaciones funcionan",
     "imgUrl": "https://google.com"
 }
 

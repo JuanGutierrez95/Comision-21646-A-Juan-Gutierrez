@@ -35,7 +35,7 @@ export const ctrlUpdatePost = async (req, res) => {
       return res.status(404).json({ message: "Posts not found" });
     } else {
       await updatedPost.update(req.body);
-      return res.status(200).json(updatePost);
+      return res.status(200).json(updatedPost);
     }
   } catch (error) {
     console.error(error);
