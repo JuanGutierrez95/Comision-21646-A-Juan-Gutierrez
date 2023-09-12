@@ -1,5 +1,3 @@
-//@urlApi = http://localhost:3000
-
 ### Get all posts
 GET http://localhost:3000/api/posts
 
@@ -8,7 +6,7 @@ POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Bien hecho",
+    "title": "Hola este es el cuarto post",
     "content": "Contenido del Post para ver si funcionan las validaciones y middlewares",
     "imgUrl": "https://google.com"
 }
@@ -26,4 +24,4 @@ Content-Type: application/json
 
 
 ### Delete post
-DELETE http://localhost:3000/api/posts/1
+DELETE http://localhost:3000/api/posts/3
