@@ -12,7 +12,7 @@ export const createPost = [
   body("imgUrl").isURL().withMessage("The image URL is not valid."),
 ];
 
-export const updatePost = [
+export const editPost = [
   body("title").optional().isString().withMessage("Title must be a string."),
   body("content")
     .optional()

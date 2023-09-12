@@ -14,8 +14,8 @@ export const ctrlGetPosts = async (req, res) => {
   }
 };
 export const ctrlCreatePost = async (req, res) => {
+  const { title, content, imgUrl } = req.body;
   try {
-    const { title, content, imgUrl } = req.body;
     const newPost = await PostModel.create({
       title,
       content,
@@ -28,8 +28,8 @@ export const ctrlCreatePost = async (req, res) => {
   }
 };
 export const ctrlUpdatePost = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const updatedPost = await PostModel.findByPk(id);
     if (!updatedPost) {
       return res.status(404).json({ message: "Posts not found" });
@@ -43,8 +43,8 @@ export const ctrlUpdatePost = async (req, res) => {
   }
 };
 export const ctrlDeletePost = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const deletedPost = await PostModel.destroy({
       where: {
         id,
