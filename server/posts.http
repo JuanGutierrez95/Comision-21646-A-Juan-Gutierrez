@@ -1,19 +1,19 @@
 ### Get all posts
-GET http://localhost:3000/api/posts
+GET http://localhost:5000/api/posts
 
 ### Create post
-POST http://localhost:3000/api/posts
+POST http://localhost:5000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Hola este es el cuarto post",
+    "title": "Hola este es el sexto post",
     "content": "Contenido del Post para ver si funcionan las validaciones y middlewares",
     "imgUrl": "https://google.com"
 }
 
 
 ### Update post
-PUT http://localhost:3000/api/posts/1
+PUT http://localhost:5000/api/posts/1
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 
 ### Delete post
-DELETE http://localhost:3000/api/posts/3
+DELETE http://localhost:5000/api/posts/3
