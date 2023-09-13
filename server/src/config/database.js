@@ -1,8 +1,11 @@
 import { Sequelize } from "sequelize";
+import 'dotenv/config'
 
-export const sequelize = new Sequelize('db_posts', 'root', '', {
-  host: "localhost",
-  dialect: "mysql",
+const {DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_DIALECT } = process.env;
+
+export const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+  host: DB_HOST,
+  dialect: DB_DIALECT,
 });
 
 export const startDb = async () => {
@@ -14,5 +17,4 @@ export const startDb = async () => {
   } catch (error) {
     console.log("Unable to connect to the database:", error);
   }
-}; 
-  
+};
