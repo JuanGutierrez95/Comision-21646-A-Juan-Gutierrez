@@ -113,8 +113,8 @@ form.addEventListener("submit", (event) => {
     });
   }
 
-  //if (option === "edit") {
-  // }
+  if (option === "edit") {
+  }
 });
 
 fetch("http://localhost:5000/api/posts")
