@@ -6,9 +6,9 @@ POST http://localhost:5000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Hola este es el sexto post",
-    "content": "Contenido del Post para ver si funcionan las validaciones y middlewares",
-    "imgUrl": "https://google.com"
+    "title": "Septimo Post",
+    "content": "La Septima descripcion de prueba",
+    "imgUrl": "https://www.dzoom.org.es/wp-content/uploads/2021/09/nocturnas-con-luna-06-734x489.jpg"
 }
 
 
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 
 ### Delete post
-DELETE http://localhost:5000/api/posts/3
+DELETE http://localhost:5000/api/posts/6
