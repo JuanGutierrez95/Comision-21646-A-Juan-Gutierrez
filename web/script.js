@@ -1,10 +1,10 @@
 //Solicitudes de Red
 
 const contenedor = document.getElementById("container-row");
-console.log(contenedor);
 const btnCrear = document.getElementById("btn-new");
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 const btnSave = document.getElementById("btn-save");
+const form = document.getElementById("formulario");
 let html = "";
 let option = "";
 
@@ -14,7 +14,7 @@ const inputImg = document.getElementById("inputImg");
 
 btnCrear.addEventListener("click", () => {
   option = "new";
-  btnSave.textContent = "New";
+  btnSave.textContent = "new";
   inputTitle.value = "";
   inputContent.value = "";
   inputImg.value = "";
@@ -87,6 +87,34 @@ document.addEventListener("click", (event) => {
     btnSave.textContent = "edit";
     myModal.show();
   }
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (option === "new") {
+    const newPost = {
+      title: inputTitle.value,
+      content: inputContent.value,
+      imgUrl: inputImg.value,
+    };
+    fetch("http://localhost:5000/api/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPost),
+    }).then((res) => {
+      if (res.ok) {
+        alert("Post created successfully");
+        myModal.hide();
+        location.reload();
+      }
+    });
+  }
+
+  //if (option === "edit") {
+  // }
 });
 
 fetch("http://localhost:5000/api/posts")
