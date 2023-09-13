@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "title": "Septimo Post",
-    "content": "La Septima descripcion de prueba",
+    "content": "La septima descripcion de prueba",
     "imgUrl": "https://www.dzoom.org.es/wp-content/uploads/2021/09/nocturnas-con-luna-06-734x489.jpg"
 }
 
