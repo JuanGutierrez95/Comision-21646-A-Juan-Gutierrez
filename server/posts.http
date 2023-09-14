@@ -1,3 +1,6 @@
+###Views
+GET http://localhost:5000/posts
+
 ### Get all posts
 GET http://localhost:5000/api/posts
 
