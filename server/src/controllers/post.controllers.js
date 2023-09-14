@@ -1,5 +1,9 @@
 import { PostModel } from "../models/Posts.js";
 
+export const ctrlView = (req, res) => {
+  res.render('posts.ejs')
+}
+
 export const ctrlGetPosts = async (req, res) => {
   try {
     const posts = await PostModel.findAll();
