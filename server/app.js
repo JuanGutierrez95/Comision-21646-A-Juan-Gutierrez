@@ -24,6 +24,6 @@ const PORT = process.env.PORT || 3000;
 app.use("/", postRouter);
 
 app.listen(PORT, () => {
-  console.log(`server listening http://localhost:${PORT}`);
+  console.log(`server listening http://localhost:${PORT}/posts`);
   startDb();
 });
