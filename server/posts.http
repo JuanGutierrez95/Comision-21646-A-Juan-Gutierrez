@@ -9,9 +9,9 @@ POST http://localhost:5000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Septimo Post",
-    "content": "La septima descripcion de prueba",
-    "imgUrl": "https://www.dzoom.org.es/wp-content/uploads/2021/09/nocturnas-con-luna-06-734x489.jpg"
+    "title": "Comida",
+    "content": "El plato frente a mí es una obra maestra culinaria. Colores vibrantes y aromas tentadores se combinan en una sinfonía de sabores. Cada bocado es una explosión de delicia, una experiencia sensorial que deja un recuerdo duradero.",
+    "imgUrl": "https://media-cdn.tripadvisor.com/media/photo-s/1a/f5/ae/b8/cerca-rotiseria.jpg"
 }
 
 

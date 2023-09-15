@@ -1,12 +1,123 @@
 <%- include("partials/header") -%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a
+      class="navbar-brand fs-5"
+      href="mailto:juan.gutierrez19958@gmail.com"
+      target="_blank"
+      >JG</a
+    >
 
-<header class="d-flex justify-content-center">
-  <h1>POSTS</h1>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a
+            class="nav-link fs-5 text-white"
+            href="\assets\Juan-Gutierrez-Desarrollador-Front-End-Full-Stack.pdf"
+            download="Juan-Gutierrez-Desarrollador-Front-End-Full-Stack.pdf"
+            >CV</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5 text-white"
+            href="https://www.linkedin.com/in/juan-gutierrez95"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5 text-white"
+            href="https://github.com/JuanGutierrez95"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5 text-white"
+            href="https://juangutierrezportfolio.vercel.app/"
+            target="_blank"
+            >Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5 text-white"
+            href="https://wa.me/541171081812?text=Hi%20connect%20with%20me"
+            target="_blank"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="text-center mx-4">
+  <h1 class="fs-2 mt-2">Welcome</h1>
+  <p class="fs-6">
+    This space offers a detailed insight into my daily activities and my
+    reflections on a variety of topics of interest. Keep exploring for
+    additional information.
+  </p>
 </header>
+
 <main class="d-flex flex-column align-items-center">
-  <button type="button" class="btn btn-primary" id="btn-new">New Post</button>
+  <button type="button" class="btn btn-success mb-4" id="btn-new">
+    New Post
+  </button>
   <div class="container text-center">
-    <div class="row" id="container-row"></div>
+    <div class="row" id="container-row">
+      <% posts.forEach(post => { %>
+      <article
+        class="col-4 d-flex justify-content-center mb-3"
+        data-id="<%= post.id %>"
+      >
+        <div class="card" style="width: 24rem">
+          <img
+            src="<%= post.imgUrl %>"
+            class="card-img-top"
+            alt="nuevo titulo"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content %></p>
+            <p class="card-text time">
+              <small class="text-body-secondary publicado"
+                >Published on <%= (post.createdAt).toLocaleDateString() %> at
+                <%= (post.createdAt).toLocaleTimeString() %></small
+              >
+            </p>
+            <p class="card-text time">
+              <small class="text-body-secondary modificado"
+                >Modified on <%= (post.updatedAt).toLocaleDateString() %> at <%=
+                (post.updatedAt).toLocaleTimeString() %></small
+              >
+            </p>
+            <div>
+              <button class="btn btn-secondary" id="btn-edit">Edit</button>
+              <button type="" class="btn btn-danger" id="btn-delete">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <% }) %>
+    </div>
   </div>
 
   <!--Parte de Modal-->

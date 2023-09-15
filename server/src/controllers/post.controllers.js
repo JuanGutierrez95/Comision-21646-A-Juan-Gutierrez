@@ -1,15 +1,14 @@
 import { PostModel } from "../models/Posts.js";
 
 export const ctrlView = async (req, res) => {
-  
   try {
     const posts = await PostModel.findAll();
-    res.render('posts.ejs', {posts})
+    res.render("posts.ejs", { posts });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
   }
-}
+};
 
 export const ctrlGetPosts = async (req, res) => {
   try {

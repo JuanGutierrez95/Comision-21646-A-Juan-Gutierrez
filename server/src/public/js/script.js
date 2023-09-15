@@ -108,10 +108,18 @@ form.addEventListener("submit", (event) => {
       body: JSON.stringify(newPost),
     }).then((res) => {
       if (res.ok) {
-        alert("Post created successfully");
-        myModal.hide();
-        location.reload();
+        Swal.fire({
+          icon: 'sucess',
+          title: '¡Post created!😃',
+          showConfirmButton: false,
+          timer: 2000
+        }).then(() => {
+          myModal.hide();
+          location.reload()
+        })
       }
+    }).catch(err => {
+      console.error(err)
     });
   }
 
@@ -127,9 +135,9 @@ form.addEventListener("submit", (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newPost),
-    }).then(res => {
-      if(res.ok){
-        alert('Post edited successfully')
+    }).then((res) => {
+      if (res.ok) {
+        alert("Post edited successfully");
         myModal.hide();
         location.reload();
       }
@@ -137,31 +145,3 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-fetch("http://localhost:5000/api/posts")
-  .then((response) => response.json()) // Parse la respuesta como JSON
-  .then((data) => {
-    console.log(data);
-    data.forEach((post) => {
-      html += `
-        <article class="col-4 d-flex justify-content-center mb-3" data-id="${post.id}">
-            <!--Post-->
-            <div class="card" style="width: 18rem">
-              <img
-                src="${post.imgUrl}"
-                class="card-img-top"
-                alt="nuevo titulo"
-              />
-              <div class="card-body">
-                <h5 class="card-title">${post.title}</h5>
-                <p class="card-text">${post.content}</p>
-                <div>
-                  <button class="btn btn-secondary" id="btn-edit">Edit</button>
-                  <button type="" class="btn btn-danger" id="btn-delete">Delete</button>
-                </div>
-              </div>
-            </div>
-          </article>
-        `;
-      contenedor.innerHTML = html;
-    });
-  });
