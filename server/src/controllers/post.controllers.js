@@ -1,5 +1,6 @@
 import { PostModel } from "../models/Posts.js";
 
+//controlador para mostrar la vista principal
 export const ctrlView = async (req, res) => {
   try {
     const posts = await PostModel.findAll();
@@ -10,6 +11,7 @@ export const ctrlView = async (req, res) => {
   }
 };
 
+//controlador para traer todos los posts
 export const ctrlGetPosts = async (req, res) => {
   try {
     const posts = await PostModel.findAll();
@@ -23,6 +25,8 @@ export const ctrlGetPosts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//controlador para crear un post
 export const ctrlCreatePost = async (req, res) => {
   const { title, content, imgUrl } = req.body;
   try {
@@ -37,6 +41,8 @@ export const ctrlCreatePost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//controlador para modificar un post
 export const ctrlUpdatePost = async (req, res) => {
   const { id } = req.params;
   try {
@@ -52,6 +58,8 @@ export const ctrlUpdatePost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//controlador para eliminar un post
 export const ctrlDeletePost = async (req, res) => {
   const { id } = req.params;
   try {

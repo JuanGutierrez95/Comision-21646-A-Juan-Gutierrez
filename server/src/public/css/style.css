@@ -1,75 +1,73 @@
-.card-img-top{
-    height: 250px;
-    object-fit: cover;
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
 }
 
 body {
   background-image: linear-gradient(to right, #e4f1fe, #8dc6ff);
 }
 
-
-
 @media (max-width: 991.98px) {
-    .navbar-nav {
-      margin: 0 auto;
-      display: table;
-      table-layout: fixed;
-      float: none;
-    }
+  .navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 576px) {
+  /* Modifica el estilo de los botones */
+  #btn-new {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 
-  /* Estilos para pantallas pequeñas */
-@media (max-width: 576px) {
-    /* Modifica el estilo de los botones */
-    #btn-new {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  
-    /* Ajusta el ancho de las tarjetas para que se vean una debajo de la otra */
-    .col-4 {
-      width: 100%;
-      padding: 0 10px;
-      margin-bottom: 20px;
-    }
+  /* Ajusta el ancho de las tarjetas para que se vean una debajo de la otra */
+  .col-4 {
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
   }
-  
-  /* Estilos para pantallas medianas */
-  @media (min-width: 577px) and (max-width: 992px) {
-    /* Modifica el estilo de los botones */
-    #btn-new {
-      font-size: 16px;
-      padding: 10px 20px;
-    }
-    
-    /* Ajusta el ancho de las tarjetas para que se vean dos en una fila */
-    .col-4 {
-      width: 50%;
-      padding: 0 10px;
-    }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 577px) and (max-width: 992px) {
+  /* Modifica el estilo de los botones */
+  #btn-new {
+    font-size: 16px;
+    padding: 10px 20px;
   }
-  
-  /* Estilos para pantallas grandes */
-  @media (min-width: 993px) {
-    /* Modifica el estilo de los botones */
-    #btn-new {
-      font-size: 18px;
-      padding: 12px 24px;
-    }
-    
-    /* Restaura el ancho de las tarjetas para que se vean tres en una fila */
-    .col-4 {
-      width: 33.33%;
-      padding: 0 10px;
-    }
+
+  /* Ajusta el ancho de las tarjetas para que se vean dos en una fila */
+  .col-4 {
+    width: 50%;
+    padding: 0 10px;
   }
-   .card {
-   
-    box-shadow: 10px 10px 18px rgba(70, 25, 83, 0.4);
-    transition: transform 0.3s; /* Transición suave al pasar el ratón sobre el elemento */
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 993px) {
+  /* Modifica el estilo de los botones */
+  #btn-new {
+    font-size: 18px;
+    padding: 12px 24px;
   }
-  
-  .card:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón sobre el elemento */
+
+  /* Restaura el ancho de las tarjetas para que se vean tres en una fila */
+  .col-4 {
+    width: 33.33%;
+    padding: 0 10px;
   }
-  
+}
+.card {
+  box-shadow: 10px 10px 18px rgba(70, 25, 83, 0.4);
+  transition: transform 0.3s; /* Transición suave al pasar el ratón sobre el elemento */
+}
+
+.card:hover {
+  transform: translateY(
+    -5px
+  ); /* Efecto de elevación al pasar el ratón sobre el elemento */
+}
